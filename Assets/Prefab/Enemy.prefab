@@ -120,7 +120,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyTarget: {fileID: 0}
+  patrolPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   rotationSpeed: 1
+  chaseRange: 15
+  patrolSpotThreshhold: 1
 --- !u!195 &6174991092145523773
 NavMeshAgent:
   m_ObjectHideFlags: 0
