@@ -78,7 +78,7 @@ public class EnemyAI : MonoBehaviour
 
     void PatrolArea()
     {        
-        if (!agent.pathPending && agent.remainingDistance <= patrolSpotThreshhold)
+        if (!agent.pathPending && agent.remainingDistance <= patrolSpotThreshhold) //Make sure threshhold matches agent stopping distance or it wont work.
         {
             GetComponent<Animator>().SetBool("isIdle", true);
             GoToNextPoint();

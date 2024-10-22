@@ -1002,10 +1002,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 35800063}
     - target: {fileID: 202982562010915920, guid: b58093633fe1707478c4b29ac492a320, type: 3}
-      propertyPath: patrolSpotThreshhold
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 202982562010915920, guid: b58093633fe1707478c4b29ac492a320, type: 3}
       propertyPath: patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 4945646624057398714}
@@ -1021,10 +1017,6 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[3]
       value: 
       objectReference: {fileID: 4945646624057398711}
-    - target: {fileID: 3276581970966697906, guid: b58093633fe1707478c4b29ac492a320, type: 3}
-      propertyPath: m_StoppingDistance
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6257707515948871731, guid: b58093633fe1707478c4b29ac492a320, type: 3}
       propertyPath: m_Name
       value: Ghost girl
