@@ -1014,6 +1014,7 @@ GameObject:
   - component: {fileID: 6756982655340308038}
   - component: {fileID: 2469090359772851593}
   - component: {fileID: 202982562010915920}
+  - component: {fileID: 4291695943387908243}
   - component: {fileID: 3276581970966697906}
   - component: {fileID: 5230083229578760752}
   m_Layer: 0
@@ -1061,8 +1062,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.416088, y: 5.2061462, z: 3.6889517}
-  m_Center: {x: 0.0002441236, y: 2.8657198, z: 0.7580194}
+  m_Size: {x: 2.416088, y: 5.469492, z: 1.9138551}
+  m_Center: {x: 0, y: 2.734047, z: 0.1448977}
 --- !u!114 &202982562010915920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1084,6 +1085,19 @@ MonoBehaviour:
   rotationSpeed: 2
   chaseRange: 10
   patrolSpotThreshhold: 1
+--- !u!114 &4291695943387908243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6257707515948871731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 430df1c605485d74aaec05bc3f622d41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 25
 --- !u!195 &3276581970966697906
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1098,7 +1112,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -1115,7 +1129,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6257707515948871731}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 4fb43aed8f0d9094a84ee5e7b039299c, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 569695ac528821e4497e4a14bfcbdd7f, type: 3}
   m_Controller: {fileID: 9100000, guid: 495a7ac85f745aa4da7e3825b897dcc9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0

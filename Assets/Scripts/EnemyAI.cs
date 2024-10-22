@@ -50,6 +50,15 @@ public class EnemyAI : MonoBehaviour
             GetComponent<Animator>().SetTrigger("isChasing");
             GetComponent<Animator>().SetBool("isIdle", false);
             agent.SetDestination(enemyTarget.position);
+
+            if (distanceToTarget <= agent.stoppingDistance)
+            {
+                GetComponent<Animator>().SetBool("isAttacking", true);
+            }
+            else
+            {
+                GetComponent<Animator>().SetBool("isAttacking", false);
+            }
         }
     }
 
@@ -57,6 +66,7 @@ public class EnemyAI : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, chaseRange);
+        Gizmos.DrawWireSphere (transform.position, agent.stoppingDistance);
     }    
 
     void FaceTarget()
