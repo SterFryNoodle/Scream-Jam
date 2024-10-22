@@ -972,7 +972,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1493306979
 Transform:
   m_ObjectHideFlags: 0
@@ -1548,7 +1548,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: ab4cffa6673d6ca48a9decadc24ab9a3, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 359baeecacbe2694d9bb31b4cb7be9b9, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &1981488073
 GameObject:
@@ -1723,7 +1723,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3889202478837519714, guid: 2e1305d41fefc6c4abf8dd3992a17eeb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3889202478837519714, guid: 2e1305d41fefc6c4abf8dd3992a17eeb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1765,6 +1765,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5324721802224199406, guid: 2e1305d41fefc6c4abf8dd3992a17eeb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1801,6 +1805,10 @@ PrefabInstance:
     - target: {fileID: 6257707515948871731, guid: b58093633fe1707478c4b29ac492a320, type: 3}
       propertyPath: m_Name
       value: Ghost girl
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257707515948871731, guid: b58093633fe1707478c4b29ac492a320, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6756982655340308038, guid: b58093633fe1707478c4b29ac492a320, type: 3}
       propertyPath: m_LocalPosition.x
