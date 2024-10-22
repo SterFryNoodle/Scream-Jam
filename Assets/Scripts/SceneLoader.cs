@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void LoadScene()
     {
-        
+        SceneManager.LoadScene(1);
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked; //Re-locks cursor from center of screen.
+        Cursor.visible = false; //Hides cursor from screen.
     }
 
-    // Update is called once per frame
-    void Update()
+    public void QuitGame()
     {
-        
+        Application.Quit();
+
+        Debug.Log("Game has closed.");
     }
 }
