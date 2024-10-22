@@ -4,20 +4,15 @@ using UnityEngine;
 
 public class ItemPickups : MonoBehaviour
 {
-    [SerializeField] GameObject keyItem;
-    [SerializeField] GameObject puzzleItem;
+    public int keyCount = 0;
 
-    int keyCount = 0;
-    void Update()
+    void OnTriggerEnter(Collider other)
     {
-        int currentKeyCount = keyCount;
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Key")
+        if (other.gameObject.tag == "Key")
         {
             keyCount++;
+            Destroy(other.gameObject);
+            Debug.Log(keyCount + " num of keys collected.");
         }
     }
 }

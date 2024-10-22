@@ -4,39 +4,35 @@ using UnityEngine;
 
 public class CameraBehavior : MonoBehaviour
 {
-    [SerializeField] Transform player;
-    [SerializeField] float mouseSensitivity = 100f;
-    [SerializeField] float distanceFromPlayer = 5f;
-    [SerializeField] float cameraHeight = 2f;
+    [SerializeField] float mouseSensitivity = 100f;  // How sensitive the mouse is
+    [SerializeField] Transform playerBody;  // Reference to the player's body
+    [SerializeField] float smoothTime = 0.1f;  // Time to smooth the rotation
 
-    [SerializeField] float minVerticalRotation = 0f;
-    [SerializeField] float maxVerticalRotation = 60f;
-
-    private float xRotation = 0f;
-    private float yRotation = 0f;
+    private float xRotation = 0f;  // To store the vertical rotation
+    private Vector2 currentRotation;  // Current smooth rotation values
+    private Vector2 rotationVelocity;  // Velocity of smooth rotation for each axis
 
     void Start()
-    {
+    {        
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    void LateUpdate()
+    void Update()
     {
+        // Get mouse input
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        yRotation += mouseX;
+        // Calculate the vertical rotation (up and down)
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, minVerticalRotation, maxVerticalRotation); //clamp vert. rotation to avoid clipping.
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);  // Clamp the rotation to prevent flipping over
 
-        // Rotate the player based on horizontal mouse movement
-        player.rotation = Quaternion.Euler(0f, yRotation, 0f);
+        // Smooth rotation along the X and Y axes
+        Vector2 targetRotation = new Vector2(xRotation, transform.localEulerAngles.y + mouseX);
+        currentRotation = Vector2.SmoothDamp(currentRotation, targetRotation, ref rotationVelocity, smoothTime);
 
-        // Calculate the new camera position
-        Vector3 cameraOffset = new Vector3(0, cameraHeight, -distanceFromPlayer);
-        Quaternion rotation = Quaternion.Euler(xRotation, yRotation, 0f);
-        transform.position = player.position + rotation * cameraOffset;
-
-        transform.LookAt(player.position + Vector3.up * cameraHeight);
+        // Apply the rotations
+        transform.localRotation = Quaternion.Euler(currentRotation.x, 0f, 0f);  // Up/down rotation for the camera
+        playerBody.Rotate(Vector3.up * mouseX);  // Left/right rotation for the player body
     }
 }
