@@ -47,6 +47,8 @@ public class EnemyAI : MonoBehaviour
         if (isProvoked)
         {
             FaceTarget();
+            GetComponent<Animator>().SetTrigger("isChasing");
+            GetComponent<Animator>().SetBool("isIdle", false);
             agent.SetDestination(enemyTarget.position);
         }
     }
@@ -68,6 +70,7 @@ public class EnemyAI : MonoBehaviour
     {        
         if (!agent.pathPending && agent.remainingDistance <= patrolSpotThreshhold)
         {
+            GetComponent<Animator>().SetBool("isIdle", true);
             GoToNextPoint();
         }
     }

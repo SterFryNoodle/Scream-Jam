@@ -747,6 +747,7 @@ GameObject:
   - component: {fileID: 2469090359772851593}
   - component: {fileID: 202982562010915920}
   - component: {fileID: 3276581970966697906}
+  - component: {fileID: 5230083229578760752}
   m_Layer: 0
   m_Name: Ghost girl
   m_TagString: Untagged
@@ -764,8 +765,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.52, y: 0, z: -8.48}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 970238105196304212}
   - {fileID: 5939705992868072635}
@@ -792,8 +793,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.416088, y: 4.7551646, z: 3.6889515}
-  m_Center: {x: 0.00024414062, y: 2.6402295, z: 0.75801945}
+  m_Size: {x: 2.416088, y: 5.2061462, z: 3.6889517}
+  m_Center: {x: 0.0002441236, y: 2.8657198, z: 0.7580194}
 --- !u!114 &202982562010915920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -824,8 +825,8 @@ NavMeshAgent:
   m_GameObject: {fileID: 6257707515948871731}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 6
+  m_Radius: 1.5
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -837,6 +838,27 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &5230083229578760752
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6257707515948871731}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 4fb43aed8f0d9094a84ee5e7b039299c, type: 3}
+  m_Controller: {fileID: 9100000, guid: 495a7ac85f745aa4da7e3825b897dcc9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6315372687444674160
 GameObject:
   m_ObjectHideFlags: 0

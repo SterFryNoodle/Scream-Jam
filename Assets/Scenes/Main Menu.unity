@@ -858,32 +858,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73da126e30abf15449a147a4f264aa7d, type: 3}
---- !u!1 &1062071200231463360 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6257707515948871731, guid: b58093633fe1707478c4b29ac492a320, type: 3}
-  m_PrefabInstance: {fileID: 3047072325098063677}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1062071200231463364
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1062071200231463360}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1543521299146127656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -974,18 +948,6 @@ PrefabInstance:
       value: Ghost girl
       objectReference: {fileID: 0}
     - target: {fileID: 6756982655340308038, guid: b58093633fe1707478c4b29ac492a320, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6756982655340308038, guid: b58093633fe1707478c4b29ac492a320, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6756982655340308038, guid: b58093633fe1707478c4b29ac492a320, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6756982655340308038, guid: b58093633fe1707478c4b29ac492a320, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.82
       objectReference: {fileID: 0}
@@ -1028,10 +990,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6257707515948871731, guid: b58093633fe1707478c4b29ac492a320, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1062071200231463364}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b58093633fe1707478c4b29ac492a320, type: 3}
 --- !u!1001 &4945646624057398710
 PrefabInstance:
@@ -1178,9 +1137,9 @@ SceneRoots:
   - {fileID: 705507995}
   - {fileID: 1980932455}
   - {fileID: 1543521299146127656}
+  - {fileID: 3047072325098063677}
   - {fileID: 362124708}
   - {fileID: 1930769845}
   - {fileID: 5148983457130209639}
   - {fileID: 4945646624057398710}
   - {fileID: 1981488074}
-  - {fileID: 3047072325098063677}
