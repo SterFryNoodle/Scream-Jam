@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5768412327271394524}
   - component: {fileID: 3043869824936098472}
   - component: {fileID: 1271860435659276478}
+  - component: {fileID: 4574565075243311710}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -165,6 +166,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseSpeed: 2
   sprintSpeed: 6
+--- !u!114 &4574565075243311710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5324721802224199406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6375b8e37319a524880fcaa2d61f4f24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverScreen: {fileID: 0}
 --- !u!1 &6705796597030213775
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,7 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 352113592e1bf154c9e878e88491f4b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 100
+  mouseSensitivity: 150
   playerBody: {fileID: 3889202478837519714}
   smoothTime: 0.075
 --- !u!81 &9127593545385054259
