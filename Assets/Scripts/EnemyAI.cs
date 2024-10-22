@@ -12,12 +12,14 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] float patrolSpotThreshhold = 1f;
 
     NavMeshAgent agent;
+    FlashlightBehavior flashlightBehavior;
     float distanceToTarget = Mathf.Infinity;    
     bool isProvoked = false;
     int currentPatrolIndex = 0;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        flashlightBehavior = FindAnyObjectByType<FlashlightBehavior>();
         GoToNextPoint();
     }
     
@@ -33,6 +35,7 @@ public class EnemyAI : MonoBehaviour
         if (distanceToTarget <= chaseRange && distanceToTarget > agent.stoppingDistance)
         {
             isProvoked = true;
+            flashlightBehavior.FlickerPlayerLights();
             ChaseTarget();
         }
         else if (distanceToTarget > chaseRange)

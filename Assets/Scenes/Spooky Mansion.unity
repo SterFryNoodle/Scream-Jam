@@ -984,6 +984,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5768412327271394524, guid: 2e1305d41fefc6c4abf8dd3992a17eeb, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535438504731060687, guid: 2e1305d41fefc6c4abf8dd3992a17eeb, type: 3}
+      propertyPath: flickerSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535438504731060687, guid: 2e1305d41fefc6c4abf8dd3992a17eeb, type: 3}
+      propertyPath: flashlightFlickerMax
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
