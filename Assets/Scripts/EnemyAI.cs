@@ -26,19 +26,23 @@ public class EnemyAI : MonoBehaviour
         SetEnemyBehavior();
     }
 
-    private void SetEnemyBehavior()
+    void SetEnemyBehavior()
     {
         distanceToTarget = Vector3.Distance(enemyTarget.position, transform.position);
 
-        if (distanceToTarget <= chaseRange)
+        if (distanceToTarget <= chaseRange && distanceToTarget > agent.stoppingDistance)
         {
             isProvoked = true;
             ChaseTarget();
         }
-        else
+        else if (distanceToTarget > chaseRange)
         {
             isProvoked = false;
             PatrolArea();
+        }
+        else if (distanceToTarget <= agent.stoppingDistance)
+        {
+            AttackTarget();
         }
     }
 
@@ -47,26 +51,22 @@ public class EnemyAI : MonoBehaviour
         if (isProvoked)
         {
             FaceTarget();
-            GetComponent<Animator>().SetTrigger("isChasing");
             GetComponent<Animator>().SetBool("isIdle", false);
-            agent.SetDestination(enemyTarget.position);
-
-            if (distanceToTarget <= agent.stoppingDistance)
-            {
-                GetComponent<Animator>().SetBool("isAttacking", true);
-            }
-            else
-            {
-                GetComponent<Animator>().SetBool("isAttacking", false);
-            }
+            GetComponent<Animator>().SetBool("isAttacking", false);
+            GetComponent<Animator>().SetTrigger("isChasing");            
+            agent.SetDestination(enemyTarget.position);                        
         }
     }
 
-    private void OnDrawGizmosSelected()
+    void AttackTarget()
+    {
+        GetComponent<Animator>().SetBool("isAttacking", true);
+    }
+
+    void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, chaseRange);
-        Gizmos.DrawWireSphere (transform.position, agent.stoppingDistance);
     }    
 
     void FaceTarget()
