@@ -1,10 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ItemPickups : MonoBehaviour
 {
     public int keyCount = 0;
+
+    [SerializeField] TextMeshProUGUI keyAmt;
+
+    void Start()
+    {
+        keyAmt.text = "Keys: " + keyCount.ToString();
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -12,7 +20,7 @@ public class ItemPickups : MonoBehaviour
         {
             keyCount++;
             Destroy(other.gameObject);
-            Debug.Log(keyCount + " num of keys collected.");
+            keyAmt.text = "Keys: " + keyCount.ToString();
         }
     }
 }
