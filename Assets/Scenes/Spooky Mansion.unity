@@ -462,6 +462,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5324721802224199406, guid: 2e1305d41fefc6c4abf8dd3992a17eeb, type: 3}
   m_PrefabInstance: {fileID: 1543521299146127656}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &836248165 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3641282806935239524, guid: 2e1305d41fefc6c4abf8dd3992a17eeb, type: 3}
+  m_PrefabInstance: {fileID: 1543521299146127656}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836248156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f158b2bbd74aac4eacff5b89a050a09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!223 &1272103851 stripped
 Canvas:
   m_CorrespondingSourceObject: {fileID: 1186616178567435272, guid: dbe23f8c644f9184ea912c25e730d418, type: 3}
@@ -875,6 +886,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 1710875426875670746, guid: dbe23f8c644f9184ea912c25e730d418, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710875426875670746, guid: dbe23f8c644f9184ea912c25e730d418, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710875426875670746, guid: dbe23f8c644f9184ea912c25e730d418, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710875426875670746, guid: dbe23f8c644f9184ea912c25e730d418, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000038146973
+      objectReference: {fileID: 0}
     - target: {fileID: 2955305355950063374, guid: dbe23f8c644f9184ea912c25e730d418, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -883,6 +910,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 6222721974593091669}
+    - target: {fileID: 6307257444649596938, guid: dbe23f8c644f9184ea912c25e730d418, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 6307257444649596938, guid: dbe23f8c644f9184ea912c25e730d418, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 6307257444649596938, guid: dbe23f8c644f9184ea912c25e730d418, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.000061035
+      objectReference: {fileID: 0}
+    - target: {fileID: 6307257444649596938, guid: dbe23f8c644f9184ea912c25e730d418, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.00048828
+      objectReference: {fileID: 0}
     - target: {fileID: 7168854342009674376, guid: dbe23f8c644f9184ea912c25e730d418, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -923,11 +966,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8771113301910058083, guid: dbe23f8c644f9184ea912c25e730d418, type: 3}
+      propertyPath: m_Alpha
+      value: 0.14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbe23f8c644f9184ea912c25e730d418, type: 3}
+--- !u!223 &982370241005360242 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 3369150086150339212, guid: dbe23f8c644f9184ea912c25e730d418, type: 3}
+  m_PrefabInstance: {fileID: 982370241005360241}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1543521299146127656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -936,6 +988,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3641282806935239524, guid: 2e1305d41fefc6c4abf8dd3992a17eeb, type: 3}
+      propertyPath: takeDmgCanvas
+      value: 
+      objectReference: {fileID: 982370241005360242}
     - target: {fileID: 3889202478837519714, guid: 2e1305d41fefc6c4abf8dd3992a17eeb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.25
@@ -984,18 +1040,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5768412327271394524, guid: 2e1305d41fefc6c4abf8dd3992a17eeb, type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 8535438504731060687, guid: 2e1305d41fefc6c4abf8dd3992a17eeb, type: 3}
-      propertyPath: flickerSpeed
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8535438504731060687, guid: 2e1305d41fefc6c4abf8dd3992a17eeb, type: 3}
-      propertyPath: flashlightFlickerMax
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1014,6 +1058,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 35800063}
     - target: {fileID: 202982562010915920, guid: b58093633fe1707478c4b29ac492a320, type: 3}
+      propertyPath: damagedOverlay
+      value: 
+      objectReference: {fileID: 836248165}
+    - target: {fileID: 202982562010915920, guid: b58093633fe1707478c4b29ac492a320, type: 3}
+      propertyPath: damageIndicator
+      value: 
+      objectReference: {fileID: 982370241005360242}
+    - target: {fileID: 202982562010915920, guid: b58093633fe1707478c4b29ac492a320, type: 3}
+      propertyPath: damagedUIAnimation
+      value: 
+      objectReference: {fileID: 982370241005360242}
+    - target: {fileID: 202982562010915920, guid: b58093633fe1707478c4b29ac492a320, type: 3}
       propertyPath: patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 4945646624057398714}
@@ -1029,6 +1085,10 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[3]
       value: 
       objectReference: {fileID: 4945646624057398711}
+    - target: {fileID: 4291695943387908243, guid: b58093633fe1707478c4b29ac492a320, type: 3}
+      propertyPath: damageIndicator
+      value: 
+      objectReference: {fileID: 982370241005360242}
     - target: {fileID: 6257707515948871731, guid: b58093633fe1707478c4b29ac492a320, type: 3}
       propertyPath: m_Name
       value: Ghost girl

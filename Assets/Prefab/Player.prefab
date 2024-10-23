@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4564078285729909802}
   - component: {fileID: 1271860435659276478}
   - component: {fileID: 4574565075243311710}
+  - component: {fileID: 3641282806935239524}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -194,6 +195,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverScreen: {fileID: 0}
+--- !u!114 &3641282806935239524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5324721802224199406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f158b2bbd74aac4eacff5b89a050a09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  takeDmgCanvas: {fileID: 0}
+  impactTimer: 0.3
+  staticFlickerSpeed: 4
 --- !u!1 &6705796597030213775
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,5 +426,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashlightFlickerMin: 0
-  flashlightFlickerMax: 2
+  flashlightFlickerMax: 8
   flickerSpeed: 6

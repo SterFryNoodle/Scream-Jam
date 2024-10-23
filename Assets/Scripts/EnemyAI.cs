@@ -7,19 +7,20 @@ public class EnemyAI : MonoBehaviour
 {
     [SerializeField] Transform enemyTarget;
     [SerializeField] Transform[] patrolPoints;
+    [SerializeField] DamageUI damagedOverlay;
     [SerializeField] float rotationSpeed = 1f;
     [SerializeField] float chaseRange = 5f;
     [SerializeField] float patrolSpotThreshhold = 1f;
-
+    
     NavMeshAgent agent;
-    FlashlightBehavior flashlightBehavior;
+    FlashlightBehavior flashlightBehavior;    
     float distanceToTarget = Mathf.Infinity;    
     bool isProvoked = false;
     int currentPatrolIndex = 0;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        flashlightBehavior = FindAnyObjectByType<FlashlightBehavior>();
+        flashlightBehavior = FindAnyObjectByType<FlashlightBehavior>();        
         GoToNextPoint();
     }
     
@@ -64,6 +65,7 @@ public class EnemyAI : MonoBehaviour
     void AttackTarget()
     {
         GetComponent<Animator>().SetBool("isAttacking", true);
+        damagedOverlay.ShowDamageUI();
     }
 
     void OnDrawGizmosSelected()
