@@ -27,6 +27,7 @@ public class PlayFootsteps : MonoBehaviour
                 distanceTraveled = 0f;
                 lastPosition = transform.position;
             }
+            
         }
     }
     void GetFootstepsAudio()

@@ -8,18 +8,22 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] Transform enemyTarget;
     [SerializeField] Transform[] patrolPoints;
     [SerializeField] DamageUI damagedOverlay;
+    [SerializeField] AudioClip chaseSound;
+    [SerializeField] AudioClip attackSFX;    
     [SerializeField] float rotationSpeed = 1f;
     [SerializeField] float chaseRange = 5f;
     [SerializeField] float patrolSpotThreshhold = 1f;
     
     NavMeshAgent agent;
-    FlashlightBehavior flashlightBehavior;    
+    FlashlightBehavior flashlightBehavior;
+    AudioSource audioSource;
     float distanceToTarget = Mathf.Infinity;    
     bool isProvoked = false;
     int currentPatrolIndex = 0;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        audioSource = GetComponent<AudioSource>();
         flashlightBehavior = FindAnyObjectByType<FlashlightBehavior>();        
         GoToNextPoint();
     }
@@ -42,7 +46,8 @@ public class EnemyAI : MonoBehaviour
         else if (distanceToTarget > chaseRange)
         {
             isProvoked = false;
-            flashlightBehavior.GetComponent<Light>().intensity = 2.5f;
+            flashlightBehavior.GetComponent<Light>().intensity = 1.5f;
+            audioSource.Stop();
             PatrolArea();
         }
         else if (distanceToTarget <= agent.stoppingDistance)
@@ -58,15 +63,41 @@ public class EnemyAI : MonoBehaviour
             FaceTarget();
             GetComponent<Animator>().SetBool("isIdle", false);
             GetComponent<Animator>().SetBool("isAttacking", false);
-            GetComponent<Animator>().SetTrigger("isChasing");            
-            agent.SetDestination(enemyTarget.position);                        
+            GetComponent<Animator>().SetTrigger("isChasing");
+            agent.SetDestination(enemyTarget.position);
+            PlayChaseMusic();
+        }        
+    }
+
+    void PlayChaseMusic()
+    {
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = chaseSound;
+            audioSource.Play();
         }
     }
 
     void AttackTarget()
     {
         GetComponent<Animator>().SetBool("isAttacking", true);
+        PlayAttackSFX();
         damagedOverlay.ShowDamageUI();
+    }
+
+    void PlayAttackSFX()
+    {
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = attackSFX;
+            audioSource.Play();
+        }
+        else
+        {
+            audioSource.Stop();
+            audioSource.clip = attackSFX;
+            audioSource.Play();
+        }
     }
 
     void OnDrawGizmosSelected()
