@@ -42,6 +42,7 @@ public class EnemyAI : MonoBehaviour
         else if (distanceToTarget > chaseRange)
         {
             isProvoked = false;
+            flashlightBehavior.GetComponent<Light>().intensity = 2.5f;
             PatrolArea();
         }
         else if (distanceToTarget <= agent.stoppingDistance)
