@@ -12,7 +12,7 @@ public class ShowEndScreen : MonoBehaviour
         endOfGameScreen.enabled = false;
     }    
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
         Debug.Log("Entered exit collider");
         endOfGameScreen.enabled = true;
@@ -22,5 +22,5 @@ public class ShowEndScreen : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.None; //Unlocks cursor from center of screen.
         Cursor.visible = true; //Makes cursor visible to player.  
-    }
+    }    
 }
