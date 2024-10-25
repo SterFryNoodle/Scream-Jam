@@ -9,7 +9,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] Transform[] patrolPoints;
     [SerializeField] DamageUI damagedOverlay;
     [SerializeField] AudioClip chaseSound;
-    [SerializeField] AudioClip attackSFX;    
+    [SerializeField] AudioClip attackSFX;
     [SerializeField] float rotationSpeed = 1f;
     [SerializeField] float chaseRange = 5f;
     [SerializeField] float patrolSpotThreshhold = 1f;
@@ -37,7 +37,7 @@ public class EnemyAI : MonoBehaviour
     {
         distanceToTarget = Vector3.Distance(enemyTarget.position, transform.position);
 
-        if (distanceToTarget <= chaseRange && distanceToTarget > agent.stoppingDistance)
+        if (distanceToTarget <= chaseRange && distanceToTarget > (agent.stoppingDistance))
         {
             isProvoked = true;
             flashlightBehavior.FlickerPlayerLights();
@@ -50,7 +50,7 @@ public class EnemyAI : MonoBehaviour
             audioSource.Stop();
             PatrolArea();
         }
-        else if (distanceToTarget <= agent.stoppingDistance)
+        else if (distanceToTarget <= (agent.stoppingDistance))
         {
             AttackTarget();
         }
@@ -81,7 +81,7 @@ public class EnemyAI : MonoBehaviour
     void AttackTarget()
     {
         GetComponent<Animator>().SetBool("isAttacking", true);
-        PlayAttackSFX();
+        PlayAttackSFX();     
         damagedOverlay.ShowDamageUI();
     }
 
@@ -92,11 +92,11 @@ public class EnemyAI : MonoBehaviour
             audioSource.clip = attackSFX;
             audioSource.Play();
         }
-        else
+        else if (audioSource.clip == chaseSound)
         {
             audioSource.Stop();
             audioSource.clip = attackSFX;
-            audioSource.Play();
+            audioSource.Play();            
         }
     }
 

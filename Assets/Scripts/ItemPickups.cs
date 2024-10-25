@@ -19,8 +19,14 @@ public class ItemPickups : MonoBehaviour
         if (other.gameObject.tag == "Key")
         {
             keyCount++;
-            Destroy(other.gameObject);            
+            StartCoroutine(DelayPickupDespawn(other));            
             keyAmt.text = "Keys: " + keyCount.ToString() + "/4";
         }
     }    
+
+    IEnumerator DelayPickupDespawn(Collider key)
+    {        
+        yield return new WaitForSeconds(.5f);
+        key.gameObject.SetActive(false);
+    }
 }
