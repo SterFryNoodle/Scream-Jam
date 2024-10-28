@@ -19,6 +19,7 @@ public class EnemyAI : MonoBehaviour
     AudioSource audioSource;
     float distanceToTarget = Mathf.Infinity;    
     bool isProvoked = false;
+    public bool isPlayingMusic = false;
     int currentPatrolIndex = 0;
     void Start()
     {
@@ -40,12 +41,14 @@ public class EnemyAI : MonoBehaviour
         if (distanceToTarget <= chaseRange && distanceToTarget > (agent.stoppingDistance))
         {
             isProvoked = true;
+            isPlayingMusic = true;
             flashlightBehavior.FlickerPlayerLights();
             ChaseTarget();
         }
         else if (distanceToTarget > chaseRange)
         {
             isProvoked = false;
+            isPlayingMusic = false;
             flashlightBehavior.GetComponent<Light>().intensity = 1.5f;
             audioSource.Stop();
             PatrolArea();
@@ -74,7 +77,7 @@ public class EnemyAI : MonoBehaviour
         if (!audioSource.isPlaying)
         {
             audioSource.clip = chaseSound;
-            audioSource.Play();
+            audioSource.Play();            
         }
     }
 
@@ -90,7 +93,7 @@ public class EnemyAI : MonoBehaviour
         if (!audioSource.isPlaying)
         {
             audioSource.clip = attackSFX;
-            audioSource.Play();
+            audioSource.Play();            
         }
         else if (audioSource.clip == chaseSound)
         {
