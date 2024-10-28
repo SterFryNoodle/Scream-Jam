@@ -2020,8 +2020,8 @@ MonoBehaviour:
     atlasWidth: 512
     atlasHeight: 512
     characterSetSelectionMode: 6
-    characterSequence: 20-5F,61-7E,A0,2026
-    referencedFontAssetGUID: 
+    characterSequence: 20-21,2C,2E,30-39,3F,41-5A,61-7A
+    referencedFontAssetGUID: f3f6282764298e546ac17a1396323b1d
     referencedTextAssetGUID: 
     fontStyle: 0
     fontStyleModifier: 0
