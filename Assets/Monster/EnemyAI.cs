@@ -48,9 +48,7 @@ public class EnemyAI : MonoBehaviour
         else if (distanceToTarget > chaseRange)
         {
             isProvoked = false;
-            isPlayingMusic = false;
-            flashlightBehavior.GetComponent<Light>().intensity = 1.5f;
-            audioSource.Stop();
+            isPlayingMusic = false;            
             PatrolArea();
         }
         else if (distanceToTarget <= (agent.stoppingDistance))
@@ -68,6 +66,7 @@ public class EnemyAI : MonoBehaviour
             GetComponent<Animator>().SetBool("isAttacking", false);
             GetComponent<Animator>().SetTrigger("isChasing");
             agent.SetDestination(enemyTarget.position);
+            agent.speed = 4f;
             PlayChaseMusic();
         }        
     }
@@ -117,10 +116,14 @@ public class EnemyAI : MonoBehaviour
     }
 
     void PatrolArea()
-    {        
+    {
+        flashlightBehavior.GetComponent<Light>().intensity = 1.5f; //Resets player flashlight intensity.
+        GetComponent<Animator>().SetBool("isIdle", true);
+        agent.speed = 1f;
+        audioSource.Stop();
+
         if (!agent.pathPending && agent.remainingDistance <= patrolSpotThreshhold) //Make sure threshhold matches agent stopping distance or it wont work.
-        {
-            GetComponent<Animator>().SetBool("isIdle", true);
+        {            
             GoToNextPoint();
         }
     }

@@ -1088,8 +1088,9 @@ MonoBehaviour:
   chaseSound: {fileID: 8300000, guid: e808798d4fcbd884bb4a97292993d73c, type: 3}
   attackSFX: {fileID: 8300000, guid: 9633e842b422c0e4fbd87f040c0b8a51, type: 3}
   rotationSpeed: 4
-  chaseRange: 10
+  chaseRange: 6
   patrolSpotThreshhold: 2
+  isPlayingMusic: 0
 --- !u!114 &4291695943387908243
 MonoBehaviour:
   m_ObjectHideFlags: 0
