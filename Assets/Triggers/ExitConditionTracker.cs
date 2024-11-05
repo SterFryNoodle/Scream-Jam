@@ -11,13 +11,16 @@ public class ExitConditionTracker : MonoBehaviour
     [SerializeField] TextMeshProUGUI findExitPrompt;
     [SerializeField] TextMeshProUGUI exitConditionPrompt;
     [SerializeField] float interactionRange = 3f;
+    [SerializeField] AudioClip lockedSFX;
 
     bool inRange = false;
     float textPromptTimer = 2f;
     ItemPickups keysObtained;
+    AudioSource audioSource;
     void Start()
     {
         keysObtained = FindObjectOfType<ItemPickups>();
+        audioSource = GetComponent<AudioSource>();
         findExitPrompt.enabled = false;
         exitConditionPrompt.enabled = false;
     }
@@ -53,6 +56,7 @@ public class ExitConditionTracker : MonoBehaviour
             {
                 exitConditionPrompt.enabled = true;
                 exitConditionPrompt.text = "Not enough keys to unlock.";
+                PlayLockedSFX();
                 StartCoroutine(DisablePrompt());
             }            
         }
@@ -62,8 +66,18 @@ public class ExitConditionTracker : MonoBehaviour
             {
                 findExitPrompt.enabled = true;
                 findExitPrompt.text = "Find another way out.";
+                PlayLockedSFX();
                 StartCoroutine(DisablePrompt());
             }            
+        }
+    }
+
+    void PlayLockedSFX()
+    {
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = lockedSFX;
+            audioSource.Play();
         }
     }
 
