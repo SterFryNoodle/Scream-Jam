@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Key
   - Bar Door
+  - Locked Door
   layers:
   - Default
   - TransparentFX
