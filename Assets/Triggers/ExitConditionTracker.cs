@@ -34,8 +34,7 @@ public class ExitConditionTracker : MonoBehaviour
         else
         {
             inRange = false;
-        }
-        
+        }        
     }
 
     void InteractWithDoor()
