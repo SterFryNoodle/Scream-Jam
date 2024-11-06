@@ -128,7 +128,7 @@ Transform:
   m_GameObject: {fileID: 9174048076267260552}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.66, y: 0, z: -4.44}
+  m_LocalPosition: {x: -8.16, y: 0, z: -5.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -263,4 +263,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6163033e40f4e745aac66176ec2eb0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorSqueak: {fileID: 8300000, guid: 418c7595b7c8b2447bdd72cebdd21e5c, type: 3}
+  doorSqueak: {fileID: 8300000, guid: cc068588288fd814da6eb04e242d243e, type: 3}

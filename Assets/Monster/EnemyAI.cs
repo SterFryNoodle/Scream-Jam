@@ -119,7 +119,7 @@ public class EnemyAI : MonoBehaviour
     {
         flashlightBehavior.GetComponent<Light>().intensity = 1.5f; //Resets player flashlight intensity.
         GetComponent<Animator>().SetBool("isIdle", true);
-        agent.speed = 1f;
+        agent.speed = 2f;
         audioSource.Stop();
 
         if (!agent.pathPending && agent.remainingDistance <= patrolSpotThreshhold) //Make sure threshhold matches agent stopping distance or it wont work.

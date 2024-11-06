@@ -293,7 +293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationAngle: 30
-  interactionRange: 3
+  interactionRange: 1.5
   doorOpenSound: {fileID: 8300000, guid: 66940026d447ac1469b5faf9943eae8f, type: 3}
   knobJiggleSound: {fileID: 8300000, guid: ec92dd90d9b93524aade7188f648c0ef, type: 3}
 --- !u!65 &7282083144061440113

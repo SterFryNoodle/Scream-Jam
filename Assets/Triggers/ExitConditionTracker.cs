@@ -8,6 +8,7 @@ using UnityEngine;
 public class ExitConditionTracker : MonoBehaviour
 {
     [SerializeField] GameObject playerObject;
+    [SerializeField] GameObject interactionPrompt;
     [SerializeField] TextMeshProUGUI findExitPrompt;
     [SerializeField] TextMeshProUGUI exitConditionPrompt;
     [SerializeField] float interactionRange = 3f;
@@ -23,6 +24,7 @@ public class ExitConditionTracker : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         findExitPrompt.enabled = false;
         exitConditionPrompt.enabled = false;
+        interactionPrompt.SetActive(false);
     }
 
     void Update()
@@ -32,10 +34,12 @@ public class ExitConditionTracker : MonoBehaviour
         if (distance <= interactionRange)
         {
             inRange = true;
+            interactionPrompt.SetActive(true);
             InteractWithDoor();
         }
         else
         {
+            interactionPrompt.SetActive(false);
             inRange = false;
         }        
     }

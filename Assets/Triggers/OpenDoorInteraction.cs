@@ -5,11 +5,10 @@ using UnityEngine;
 public class OpenDoorInteraction : MonoBehaviour
 {    
     [SerializeField] float rotationAngle = 30f;
-    [SerializeField] float interactionRange = 3f;
+    [SerializeField] float interactionRange = 1.5f;
     [SerializeField] AudioClip doorOpenSound;
     [SerializeField] AudioClip knobJiggleSound;
-
-    bool inRange = false;
+        
     bool isOpened = false;
     GameObject playerObject;
     AudioSource audioSource;
@@ -25,14 +24,9 @@ public class OpenDoorInteraction : MonoBehaviour
         float distance = Vector3.Distance(playerObject.transform.position, transform.position);
 
         if (distance <= interactionRange)
-        {
-            inRange = true;
+        {            
             OpenDoorAction();
-        }
-        else
-        {
-            inRange = false;
-        }
+        }        
     }
 
     void OpenDoorAction()
