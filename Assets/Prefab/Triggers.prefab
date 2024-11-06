@@ -263,4 +263,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6163033e40f4e745aac66176ec2eb0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorSqueak: {fileID: 8300000, guid: cc068588288fd814da6eb04e242d243e, type: 3}
+  doorSqueak: {fileID: 8300000, guid: 418c7595b7c8b2447bdd72cebdd21e5c, type: 3}

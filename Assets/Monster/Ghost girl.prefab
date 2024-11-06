@@ -1088,7 +1088,7 @@ MonoBehaviour:
   chaseSound: {fileID: 8300000, guid: e808798d4fcbd884bb4a97292993d73c, type: 3}
   attackSFX: {fileID: 8300000, guid: 62f0aa4607a3d6249b69b6cfb9e93a9a, type: 3}
   rotationSpeed: 4
-  chaseRange: 6
+  chaseRange: 7
   patrolSpotThreshhold: 2
   isPlayingMusic: 0
 --- !u!114 &4291695943387908243
@@ -1103,7 +1103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 430df1c605485d74aaec05bc3f622d41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 25
+  attackDamage: 35
 --- !u!195 &3276581970966697906
 NavMeshAgent:
   m_ObjectHideFlags: 0
