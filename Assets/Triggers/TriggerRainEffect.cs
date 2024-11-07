@@ -5,28 +5,28 @@ using UnityEngine;
 public class TriggerRainEffect : MonoBehaviour
 {
     [SerializeField] AudioClip raindropSFX;
+    [SerializeField] ParticleSystem rainParticles;
 
     AudioSource audioSource;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        gameObject.GetComponent<ParticleSystem>().Pause();
+        rainParticles.GetComponent<ParticleSystem>().Pause();
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
-        {
-            gameObject.SetActive(true);
-            gameObject.GetComponent<ParticleSystem>().Play();
+        {            
+            rainParticles.GetComponent<ParticleSystem>().Play();
             PlayRainSFX();
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-        gameObject.GetComponent<ParticleSystem>().Stop();
+        rainParticles.GetComponent<ParticleSystem>().Stop();
         audioSource.Stop();
     }
 
