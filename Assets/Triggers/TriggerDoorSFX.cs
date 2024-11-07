@@ -9,7 +9,7 @@ public class TriggerDoorSFX : MonoBehaviour
     AudioSource audioSource;
     bool isTriggered = false;
 
-    private void Start()
+    void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
